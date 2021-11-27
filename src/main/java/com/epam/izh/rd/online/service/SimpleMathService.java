@@ -52,7 +52,6 @@ public class SimpleMathService implements MathService {
         return sum;
     }
 
-
     /**
      * Метод фильтрует массив, оставляя только четные числа.
      * Например для списка {-1, -3, 4, 8, 5, 22, 17} метод должен вернуть {4, 8, 22}
@@ -146,7 +145,13 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public boolean isPrimary(int number) {
-        return false;
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
