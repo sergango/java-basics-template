@@ -88,7 +88,17 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        return -1L;
+        int result = 1;
+
+        if (initialVal == 0) {
+            return 1;
+        } else {
+            for (int i = 1; i <= initialVal; i++) {
+                result *= i;
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -103,7 +113,19 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFibonacci(int number) {
-        return -1L;
+        if (number == 0) {
+            return 0;
+        }
+
+        int[] array = new int[number + 1];
+
+        array[1] = 1;
+
+        for (int i = 2; i <= number; i++) {
+            array[i] += array[i - 1] + array[i - 2];
+        }
+
+        return array[number];
     }
 
     /**
